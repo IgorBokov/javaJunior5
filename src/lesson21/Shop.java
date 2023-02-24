@@ -47,57 +47,68 @@ public class Shop {
         tovarSet.add(tovar3);
         tovarSet.add(tovar4);
 
-        for (Tovar tovars : tovarSet) {
-            System.out.println(tovars);
-        }
-        System.out.println();
-
-
-        Set<Tovar> tovarSet1 = new TreeSet<>(new SortByPryceFromTo());
-        tovarSet1.addAll(tovarSet);
-
-        for (Tovar tovars : tovarSet1) {
-            System.out.println(tovars);
-        }
-
-        System.out.println();
-        Set<Tovar> tovarSet2 = new TreeSet<>(new Comparator<Tovar>() {
-            @Override
-            public int compare(Tovar o1, Tovar o2) {
-
-                if (!o1.getName().equals(o2.getName())) {
-                    return o1.getName().compareTo(o2.getName());
-                }
-                if (o1.getPrice() != o2.getPrice()) {
-                    return o1.getPrice() - o2.getPrice();
-                }
-                if (!o1.getOpis().equals(o2.getOpis())) {
-                    return o1.getOpis().compareTo(o2.getOpis());
-                }
-                return 0;
-            }
-        });
-        tovarSet2.addAll(tovarSet);
-
-        for (Tovar tovars : tovarSet2) {
-            System.out.println(tovars);
-        }
-        System.out.println();
-        Set<Tovar> tovarSet3 = new TreeSet<>((o1, o2) -> {
-            if (!o1.getName().equals(o2.getName())) {
-                return o1.getName().compareTo(o2.getName());
-            }
-            if (o1.getPrice() != o2.getPrice()) {
-                return o1.getPrice() - o2.getPrice();
-            }
-            if (!o1.getOpis().equals(o2.getOpis())) {
-                return o1.getOpis().compareTo(o2.getOpis());
+//        for (Tovar tovars : tovarSet) {
+//            System.out.println(tovars);
+//        }
+//        System.out.println();
+//
+//
+//        Set<Tovar> tovarSet1 = new TreeSet<>(new SortByPryceFromTo());
+//        tovarSet1.addAll(tovarSet);
+//
+//        for (Tovar tovars : tovarSet1) {
+//            System.out.println(tovars);
+//        }
+//
+//        System.out.println();
+//        Set<Tovar> tovarSet2 = new TreeSet<>(new Comparator<Tovar>() {
+//            @Override
+//            public int compare(Tovar o1, Tovar o2) {
+//
+//                if (!o1.getName().equals(o2.getName())) {
+//                    return o1.getName().compareTo(o2.getName());
+//                }
+//                if (o1.getPrice() != o2.getPrice()) {
+//                    return o1.getPrice() - o2.getPrice();
+//                }
+//                if (!o1.getOpis().equals(o2.getOpis())) {
+//                    return o1.getOpis().compareTo(o2.getOpis());
+//                }
+//                return 0;
+//            }
+//        });
+//        tovarSet2.addAll(tovarSet);
+//
+//        for (Tovar tovars : tovarSet2) {
+//            System.out.println(tovars);
+//        }
+//        System.out.println();
+//        Set<Tovar> tovarSet3 = new TreeSet<>((o1, o2) -> {
+//            if (!o1.getName().equals(o2.getName())) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//            if (o1.getPrice() != o2.getPrice()) {
+//                return o1.getPrice() - o2.getPrice();
+//            }
+//            if (!o1.getOpis().equals(o2.getOpis())) {
+//                return o1.getOpis().compareTo(o2.getOpis());
+//            }
+//            return 0;
+//        });
+//        tovarSet3.addAll(tovarSet);
+//        for (Tovar tovars : tovarSet3) {
+//            System.out.println(tovars);
+//        }
+        Set<Tovar> tovarRate = new TreeSet<>((o1, o2) -> {
+            if (o1.getAverageRate() != (o2.getAverageRate())) {
+                return Double.compare (o1.getAverageRate(),(o2.getAverageRate()));
             }
             return 0;
         });
-        tovarSet3.addAll(tovarSet);
-        for (Tovar tovars : tovarSet3) {
-            System.out.println(tovars);
+        tovarRate.add(tovar);
+        for (Tovar tovar5 : tovarRate) {
+            System.out.println(tovar5);
+
         }
     }
 }
