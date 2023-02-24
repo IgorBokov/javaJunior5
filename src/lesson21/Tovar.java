@@ -100,12 +100,15 @@ public class Tovar implements Comparable<Tovar> {
         }
         return 0;
     }
-    public double getAverageRate(){
+    public double getAverageRate() {
         int count = otzivs.size();
-        int rate = 0;
-        for (Otziv otziv : otzivs) {
-            rate+=otziv.getRate();
+        if (count == 0) return 0;
+        else {
+            int rate = 0;
+            for (Otziv otziv : otzivs) {
+                rate += otziv.getRate();
+            }
+            return rate / count;
         }
-        return rate / count;
     }
 }
