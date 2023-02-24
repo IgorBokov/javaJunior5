@@ -1,3 +1,5 @@
+package Logger;
+
 import org.apache.log4j.Logger;
 
 public class Lesson22 {
@@ -5,6 +7,6 @@ public class Lesson22 {
     public static void main(String[] args) {
         LOGGER.error("my Error");
         LOGGER.trace("my Trace");
-
+        LOGGER.debug("My Debuger");
     }
 }

@@ -1,11 +1,15 @@
 package lesson17.DZ;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class UtilsString implements StringUtils {
+    private static final Logger LOGGER = Logger.getLogger(UtilsString.class);
     @Override
     public double div(String number1, String number2) throws NullPointerException, NumberFormatException, ArithmeticException {
+        LOGGER.trace("Start div");
         if (number1 == null || number2 == null) {
             throw new NullPointerException("number1 == 0 || number2 == 0");
         }
@@ -24,12 +28,12 @@ public class UtilsString implements StringUtils {
         if (n2 == 0) {
             throw new ArithmeticException("деление на 0 ");
         }
+        LOGGER.trace("End div");
         return n1 / n2;
     }
 
     @Override
     public int[] findWord(String text, String word) throws NullPointerException {
-
         if (text.length() == 0 || word.length() == 0) {
             throw new NullPointerException("Нет текста или искомого слова");
         }
