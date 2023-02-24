@@ -82,9 +82,7 @@ public class Shop {
         for (Tovar tovars : tovarSet2) {
             System.out.println(tovars);
         }
-
         System.out.println();
-
         Set<Tovar> tovarSet3 = new TreeSet<>((o1, o2) -> {
             if (!o1.getName().equals(o2.getName())) {
                 return o1.getName().compareTo(o2.getName());
@@ -98,13 +96,7 @@ public class Shop {
             return 0;
         });
         tovarSet3.addAll(tovarSet);
-
         for (Tovar tovars : tovarSet3) {
-            System.out.println(tovars);
-        }
-
-
-        for (Tovar tovars : tovarSet1) {
             System.out.println(tovars);
         }
     }

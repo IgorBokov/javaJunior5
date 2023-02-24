@@ -3,7 +3,7 @@ package lesson21;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Tovar implements Comparable<Tovar> {
+public class Tovar implements Comparable<Tovar> {
     private String name;
     private String opis;
     private int price;
@@ -100,9 +100,7 @@ public abstract class Tovar implements Comparable<Tovar> {
         }
         return 0;
     }
-
-    public abstract int compare(Otziv o1, Otziv o2);
-    public double getRate(){
+    public double getAverageRate(){
         int count = otzivs.size();
         int rate = 0;
         for (Otziv otziv : otzivs) {
